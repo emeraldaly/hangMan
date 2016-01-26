@@ -9,33 +9,46 @@ var Game = {
   currentWrd: null;
 }
 
-var startGame = function(wrd){
+startGame = function(wrd){
+  this.currentWrd = new Word(this.wordBank[Math.floor(Math.random() * this.wordBank.length)]);
+  this.currentWrd.getLets();
+  this.keepPromptingUser();
 
-var Word = wordBank [Math.floor(Math.random() * words.length)];
-currentWrd = new Word;
-.getLets(currentWrd);
-.keepPromptingUser()
+  console.log(currentWrd);
+},
 
-console.log(currentWrd);
-}
-
-var keepPromptingUser = function();
+keepPromptingUser = function(){
 var self = this;
-prompt.get(['guessLetter', ()], function (err, result))
-console.log("The Letter of Space You Guessed is" + result.guessLetter);
 
-var findHowManyOfUserGuess = currentWrd.checkIfLetterFound(result.guessLetter);
-if findHowManyOfUserGuess = 0;
+prompt.get(['guessLetter'], function (err, result){
+console.log("The Letter or Space You Guessed is" + result.guessLetter);
+
+var findHowManyOfUserGuess = self.currentWrd.checkIfLetterFound(result.guessLetter);
+
+if (findHowManyOfUserGuess === 0){
 console.log("You guess wrong :(")
-guessesRemaining -= 1;
-{else
+self.guessesRemaining --;
+}else{
   console.log("You guessed right!");
-}
 
-  if currentWrd.didWeFindTheWord() = true;
+
+  if (self.currentWrd.didWeFindTheWord() === true){
   console.log("You Won!");
-  {else console.log ("Guesses remaining" + guessesRemaining)
-  console.log(wordRender(currentWrd);)
+  return 1;
+  }else{
+
+    console.log ("Guesses remaining" + self.guessesRemaining);
+    console.log(self.currentWrd.wordRender());
+  }
 }
 
+if(self.guessesRemaining>0 && self.currentWrd.found === false){
+  self.keepPromptingUser();
+}else if(self.guessesRemaining === 0) {
+  console.log('Game Over :(');
+    console.log('The word was: ' + self.currentWrd.word);
 }
+});
+}
+}
+game.startGame();
