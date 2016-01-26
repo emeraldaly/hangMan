@@ -5,7 +5,7 @@ var Word = require('./word.js');
 prompt.start();
 
 var Game = {
-    wordBank: ["Taj Mahal", "Machu Picchu", "Colosseum", "Petra", "Great Wall", "Chichen Itza", "Christ Redeemer", "Great Pyramids", "Colossus of Rhodes", "Hanging Gardens of Babylong", "Lighthouse of Alexandria", "Mausoleum at Halicarnassus", "Statue of Zeus at Olympia", "Temple of Artemis at Ephesus"]
+    wordBank: ["Taj Mahal", "Machu Picchu", "Colosseum", "Petra", "Great Wall", "Chichen Itza", "Christ Redeemer", "Great Pyramids", "Colossus of Rhodes", "Hanging Gardens of Babylong", "Lighthouse of Alexandria", "Mausoleum at Halicarnassus", "Statue of Zeus at Olympia", "Temple of Artemis at Ephesus"];
     guessesRemaining: 10;
     currentWrd: null;
 }

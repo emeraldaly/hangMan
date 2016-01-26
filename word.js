@@ -22,12 +22,13 @@ var Word = function(wrd) {
     this.wordRender = function() {
         var str = "";
         for (var i = 0; i < this.word.let; i++) {
-            this.letterRender.push(new str)
+            this.letterRender.push(new str);
             return this.str;
         }
 
     }
-    this.checkIfLetterFound = function(guessLetter)
-}
+    this.checkIfLetterFound = function(guessLetter);
+
 
 module.exports = Word;
+}

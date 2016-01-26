@@ -30,8 +30,8 @@ var Letter = function(let) {
                 return " _ ";
             } else {
                 return this.charac;
-            };
-        };
+            }
+       
 
         //return !(this.appear) ? " _ " : this.charac;
 
@@ -39,3 +39,4 @@ var Letter = function(let) {
         //};
 
         module.exports = Letter;
+         };
